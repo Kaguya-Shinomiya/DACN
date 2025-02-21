@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình kéo thả ảnh</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+
+    
+    
+
+    <!-- Hiển thị overlay khi đang xử lý -->
+    <div id="overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="container-change" class="container-change">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <h1>CHẨN ĐOÁN BỆNH TĂNG NHÃN ÁP</h1>
+            <div class="container">
+                <div id="drop-area" class="drop-area">
+                    <p id="title-drop-area">Chọn ảnh</p>
+                    <input type="file" id="file-input" style="display:none" accept="image/*" name="image">
+                    <img id="preview" src="" alt="Ảnh tải lên sẽ hiển thị ở đây" style="display:none;"/>
+                </div>
+                <!-- Hiển thị thông báo kết quả dự đoán -->
+                <div id="result" style="margin-top: 20px;"></div>
+                <div id="result1" style="margin-top: 20px;"></div>
+                <!--<button type="button" onclick="uploadImage()" id="btn_kiemtra">Kiểm tra</button>-->
+            </div>
+        </form>
+    </div>
+
+
+    
+    <div class="arrow-buttons">
+        <button class="mobilenetv3large" id="mobilenetv3large" style="display:none;">Mobilenet V3 Large</button>
+        <button class="efficientnetb4" id="efficientnetb4" style="display:none;">Efficientnet B4</button>
+        
+
+        <!--<div class="efficientnetb4" id="efficientnetb4" style="display:none;">Efficientnet B4</div>
+        <div class="mobilenetv3large" id="mobilenetv3large" style="display:none;">Mobilenet V3 Large</div>-->
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

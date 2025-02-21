@@ -1,0 +1,202 @@
+body {
+    background-image: url('https://advinhealthcare.com/wp-content/uploads/2022/12/Types-of-Hospitals-2.jpg');
+    background-size: 100%; /* Đặt kích thước ảnh nền là 50% chiều rộng/chiều cao của phần tử */
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;  /* Giữ nền cố định khi cuộn */
+    background-size: cover; /* Đảm bảo nền phủ đầy màn hình */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa theo chiều ngang */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao của cửa sổ trình duyệt */
+    margin: 0;
+    text-align: center; /* Căn giữa văn bản */
+}
+
+
+
+
+#preview {
+    /*margin-top: 20px;*/
+    margin: auto;
+    width: auto;
+    height: 500px;  /* Chiều cao ảnh là 40% so với chiều cao của vùng chứa */
+    object-fit: contain; /* Đảm bảo ảnh không bị méo */
+    display: none;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+form {
+    color: white;
+    background-color:rgba(0, 0, 0, 0.322);
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.512);
+    margin-bottom: 100px;
+}
+
+
+/* Đảm bảo cả drop-area và button nằm trong một container flex */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa các phần tử */
+    margin: 0 auto;
+    width: 100%; /* Đảm bảo chiếm hết chiều rộng */
+    max-width: 300px; /* Đảm bảo không bị rộng quá */
+}
+
+.container-change {
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động khi dịch chuyển */
+}
+
+.container-change.shift-right {
+    transform: translateX(300px); /* Dịch sang phải 200px (tùy chỉnh giá trị theo nhu cầu) */
+}
+
+
+.drop-area {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    transition: width 0.3s, height 0.3s; /* Hiệu ứng co giãn mượt mà */
+    
+}
+
+#btn_kiemtra {
+    color: rgb(0, 0, 0);
+    width: 300px;
+    margin-top: 20px; /* Khoảng cách 20px giữa nút và drop-area */
+    padding: 10px 20px; /* Thêm khoảng cách bên trong nút */
+    font-size: 16px; /* Tăng kích thước chữ cho dễ nhìn */
+    cursor: pointer; /* Hiển thị con trỏ khi di chuột vào nút */
+    border-radius: 10px;
+    background-color:rgb(0, 119, 255)
+}
+
+
+
+
+
+/* Màn hình tối */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Ẩn ban đầu */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Dấu xoay tròn */
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+.arrow-buttons {
+    position: absolute; /* Vị trí cố định, dễ căn chỉnh */
+    top: 20%; /* Điều chỉnh vị trí từ phía trên */
+    left: 0%; /* Điều chỉnh vị trí từ phía trái */
+    display: flex; /* Kích hoạt flexbox */
+    flex-direction: column; /* Sắp xếp các phần tử theo trục dọc */
+    gap: 10px; /* Tạo khoảng cách giữa các nút */
+    align-items: flex-start; /* Căn trái các phần tử */
+}
+
+.arrow-buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.efficientnetb4 {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.625); /* Màu nền */
+    color: black; /* Màu chữ */
+    padding: 10px 30px; /* Khoảng cách bên trong */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    /* clip-path: polygon(4% 50%, 0 100%, 90% 100%, 100% 50%, 90% 0, 0 0); Tạo hình mũi tên */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    border: none;
+    cursor: pointer;
+}
+
+.efficientnetb4:hover {
+    background-color: orange; /* Hiệu ứng khi rê chuột */
+}
+
+
+.mobilenetv3large {
+    display: inline-block;
+    background-color: rgb(212, 163, 163); /* Màu nền */
+    color: black; /* Màu chữ */
+    padding: 10px 30px; /* Khoảng cách bên trong */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    /* clip-path: polygon(4% 50%, 0 100%, 90% 100%, 100% 50%, 90% 0, 0 0); Tạo hình mũi tên */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    border: none;
+    cursor: pointer;
+}
+
+.mobilenetv3large:hover {
+    background-color: rgba(72, 0, 255, 0.74); /* Hiệu ứng khi rê chuột */
+}
+
+
+/* Ban đầu nút không có viền
+.button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid transparent;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+.mobilenetv3large.active {
+    border: 2px solid black !important; /* Hiển thị viền khi active */
+    
+}
+
+.efficientnetb4.active {
+    border: 2px solid black !important; /* Hiển thị viền khi active */
+    
+}
